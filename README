@@ -1,0 +1,39 @@
+# Contenuto #
+
+Main directory:
+    index.html
+    scripts.js
+    style.css
+
+image directory:
+    logoCaesarVibes.png
+    logoCaesarVibes.ico
+
+pages directory:
+    about.html
+    services.html
+----------------------------------------------------------------
+
+# Modifiche #
+
+index.html : 
+    - Creata la pagina web
+    - Messo il favicon
+    - Creata la navbar
+    - Creato il footer
+    - Create le section con il testo
+
+
+script.js : 
+    - toggleMenu() > per il menu nei dispositivi mobili
+
+
+style.css : 
+    - body
+    - navbar
+    - hambuerger menu
+    - links
+    - footer
+    - necessario per le section
+
+----------------------------------------------------------------
