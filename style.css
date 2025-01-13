@@ -2,6 +2,7 @@ body {
     background-color: #FFECD1;
     margin: 0;
     padding-bottom: 60px; /* Space for the footer */
+    overflow-x: hidden; /* Prevent horizontal scroll */
 }
 
 /* General Navbar Styles */
@@ -19,9 +20,14 @@ body {
     z-index: 1000; /* Ensure the navbar is above the content */
 }
 
-.logo img {
-    max-width: 100px;
-    height: auto;
+/* Add padding to content below the navbar to prevent overlap */
+section {
+    padding: 20px;
+    max-width: 800px;
+    margin: 80px auto; /* Added margin-top to avoid navbar cover */
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 /* Navigation Links */
@@ -71,7 +77,6 @@ body {
     visibility: hidden; /* Footer starts hidden */
     transition: visibility 0.3s ease-in-out, padding 0.3s ease-in-out;
     z-index: 1000;
-    border-top: 1px solid #004d40; /* Light border for separation */
 }
 
 .site-footer.visible {
@@ -133,28 +138,11 @@ body {
     .site-footer .footer-logo {
         max-width: 60px;
     }
-}
 
-/* Content Section */
-section {
-    padding: 20px;
-    max-width: 800px;
-    margin: 20px auto;
-    background-color: #ffffff;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-.block:nth-child(odd) {
-    text-align: left;
-    margin-left: 50px;
-    margin-right: auto;
-}
-
-.block:nth-child(even) {
-    text-align: right;
-    margin-left: auto;
-    margin-right: 50px;
+    /* Adjust padding for small screens */
+    section {
+        margin: 90px auto; /* Added more margin-top to account for mobile navbar height */
+    }
 }
 
 h1, h2, h3 {
