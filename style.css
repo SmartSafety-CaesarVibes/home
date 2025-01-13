@@ -2,6 +2,7 @@ body {
     background-color: #FFECD1;
     padding-top: 60px; /* Space for the fixed navbar */
     padding-bottom: 60px; /* Space for the fixed footer */
+    margin: 0;
 }
 
 /* General Navbar Styles */
@@ -130,16 +131,19 @@ section {
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
+
 .block:nth-child(odd) {
     text-align: left;
     margin-left: 50px;
     margin-right: auto;
 }
+
 .block:nth-child(even) {
     text-align: right;
     margin-left: auto;
     margin-right: 50px;
 }
+
 h1, h2, h3 {
     color: #15616D;
 }
