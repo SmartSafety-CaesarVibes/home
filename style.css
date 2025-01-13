@@ -1,5 +1,7 @@
 body {
     background-color: #FFECD1;
+    padding-top: 60px; /* Space for the fixed navbar */
+    padding-bottom: 60px; /* Space for the fixed footer */
 }
 
 /* General Navbar Styles */
@@ -13,6 +15,8 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 0.5rem 1rem;
+    transition: top 0.3s ease-in-out;
+    z-index: 1000; /* Ensure the navbar is above the content */
 }
 
 .logo img {
@@ -57,48 +61,6 @@ body {
     margin: 4px 0;
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-    .nav-links {
-        display: none;
-        flex-direction: column;
-        width: 100%;
-        background-color: #15616d;
-        position: absolute;
-        top: 100%;
-        left: 0;
-    }
-
-    .nav-links.active {
-        display: flex;
-    }
-
-    .hamburger {
-        display: flex;
-    }
-}
-
-a {
-    color: #001524;
-    text-decoration: none;
-}
-
-a:link {
-    color: #001524;
-}
-  
-a:visited {
-    color: #001524;
-}
-  
-a:hover {
-    color: #001524;
-}
-
-a:active {
-    color: #001524;
-}
-
 /* Footer Styles */
 .site-footer {
     width: 100%;
@@ -109,6 +71,8 @@ a:active {
     color: #fff;
     padding: 2rem 1rem;
     text-align: center;
+    transition: bottom 0.3s ease-in-out;
+    z-index: 1000; /* Ensure the footer is above the content */
 }
 
 .site-footer .container {
@@ -136,21 +100,28 @@ a:active {
     font-size: 1rem;
 }
 
-.footer-logo {
-    max-width: 100px;
-    margin-bottom: 1rem;
-}
-
 /* Responsive Design */
 @media (max-width: 768px) {
-    .site-footer p {
-        font-size: 0.875rem;
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: #15616d;
+        position: absolute;
+        top: 100%;
+        left: 0;
     }
-    .site-footer .social-links a {
-        margin: 0.25rem;
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .hamburger {
+        display: flex;
     }
 }
 
+/* Content Section */
 section {
     padding: 20px;
     max-width: 800px;
