@@ -66,11 +66,12 @@ body {
     width: 100%;
     background-color: #15616d;
     color: #fff;
-    padding: 2rem 1rem;
+    padding: 1.5rem 1rem; /* Reduced padding */
     text-align: center;
     visibility: hidden; /* Footer starts hidden */
-    transition: visibility 0.3s ease-in-out;
+    transition: visibility 0.3s ease-in-out, padding 0.3s ease-in-out;
     z-index: 1000;
+    border-top: 1px solid #004d40; /* Light border for separation */
 }
 
 .site-footer.visible {
@@ -102,6 +103,12 @@ body {
     font-size: 1rem;
 }
 
+/* Footer Logo Styles */
+.site-footer .footer-logo {
+    max-width: 80px; /* Reduced size of the footer logo */
+    margin-bottom: 1rem;
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
     .nav-links {
@@ -120,6 +127,11 @@ body {
 
     .hamburger {
         display: flex;
+    }
+
+    /* Adjust footer logo size for mobile */
+    .site-footer .footer-logo {
+        max-width: 60px;
     }
 }
 
