@@ -31,9 +31,9 @@ document.addEventListener("DOMContentLoaded", function() {
 
         // Show footer when at the bottom of the page
         if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight - footerHeight) {
-            footer.style.bottom = '0'; // Show footer
+            footer.classList.add('visible'); // Show footer by adding the visible class
         } else {
-            footer.style.bottom = `-${footerHeight}px`; // Hide footer
+            footer.classList.remove('visible'); // Hide footer by removing the visible class
         }
 
         lastScrollTop = currentScroll <= 0 ? 0 : currentScroll; // Prevent negative scroll
