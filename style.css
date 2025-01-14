@@ -48,7 +48,7 @@ body {
 
 /* Hamburger Menu (for mobile) */
 .hamburger {
-    display: none;
+    display: none; /* Initially hidden, shown in media query */
     flex-direction: column;
     cursor: pointer;
 }
@@ -63,7 +63,7 @@ body {
 /* Responsive Design */
 @media (max-width: 768px) {
     .nav-links {
-        display: none;
+        display: none; /* Hide nav links by default */
         flex-direction: column;
         width: 100%;
         background-color: #15616d;
@@ -73,11 +73,11 @@ body {
     }
 
     .nav-links.active {
-        display: flex;
+        display: flex; /* Show nav links when active */
     }
 
     .hamburger {
-        display: flex;
+        display: flex; /* Show hamburger icon */
     }
 }
 
