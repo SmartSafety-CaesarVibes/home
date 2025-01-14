@@ -1,8 +1,26 @@
 document.addEventListener("DOMContentLoaded", function() {
     console.log("About page loaded!");
 
-    // Add hover effect to team boxes
-    document.querySelectorAll(".team-box").forEach(box => {
+    // Navbar scroll behavior
+    let lastScrollTop = 0; // Keep track of the last scroll position
+    const navbar = document.getElementById("navbar");
+
+    window.addEventListener("scroll", function() {
+        const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+
+        if (currentScroll > lastScrollTop) {
+            // Scrolling down
+            navbar.style.top = "-60px"; // Hide the navbar (adjust based on your navbar height)
+        } else {
+            // Scrolling up
+            navbar.style.top = "0"; // Show the navbar
+        }
+
+        lastScrollTop = currentScroll <= 0 ? 0 : currentScroll; // For Mobile or negative scrolling
+    });
+
+    // Add hover effect to team boxes (if you have a class for team boxes)
+    document.querySelectorAll(".team-info").forEach(box => {
         box.addEventListener("mouseenter", () => {
             box.style.transform = "scale(1.05)";
             box.style.transition = "0.3s";
@@ -11,31 +29,5 @@ document.addEventListener("DOMContentLoaded", function() {
         box.addEventListener("mouseleave", () => {
             box.style.transform = "scale(1)";
         });
-    });
-
-    // Navbar and Footer Scroll Behavior
-    let lastScrollTop = 0;
-    const navbar = document.querySelector('.navbar');
-    const footer = document.querySelector('.site-footer');
-    const footerHeight = footer.offsetHeight;
-
-    window.addEventListener('scroll', () => {
-        const currentScroll = window.pageYOffset;
-
-        // Hide navbar when scrolling down, show it when scrolling up
-        if (currentScroll > lastScrollTop) {
-            navbar.style.top = '-200px'; // Hide the navbar
-        } else {
-            navbar.style.top = '0'; // Show the navbar
-        }
-
-        // Show footer when at the bottom of the page
-        if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight - footerHeight) {
-            footer.classList.add('visible'); // Show footer by adding the visible class
-        } else {
-            footer.classList.remove('visible'); // Hide footer by removing the visible class
-        }
-
-        lastScrollTop = currentScroll <= 0 ? 0 : currentScroll; // Prevent negative scroll
     });
 });
