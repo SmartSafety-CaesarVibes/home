@@ -20,6 +20,11 @@ body {
     z-index: 1000; /* Ensure the navbar is above the content */
 }
 
+.logo img {
+    max-width: 100px;
+    height: auto;
+}
+
 /* Add padding to content below the navbar to prevent overlap */
 section {
     padding: 20px;
