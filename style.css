@@ -14,7 +14,7 @@ body {
     top: 0;
     left: 0;
     right: 0;
-    transition: top 0.3s; /* Smooth transition */
+    transition: top 0.5s; /* Smooth transition */
     z-index: 1000; /* Ensure it stays on top */
 }
 
