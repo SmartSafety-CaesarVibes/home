@@ -1,8 +1,5 @@
 body {
     background-color: #FFECD1;
-    margin: 0;
-    padding-bottom: 60px; /* Space for the footer */
-    overflow-x: hidden; /* Prevent horizontal scroll */
 }
 
 /* General Navbar Styles */
@@ -12,21 +9,17 @@ body {
     align-items: center;
     background-color: #15616d;
     padding: 0.5rem 1rem;
+    position: fixed; /* Fixed position for scrolling effect */
+    top: 0;
+    left: 0;
+    right: 0;
+    transition: top 0.3s; /* Smooth transition */
+    z-index: 1000; /* Ensure it stays on top */
 }
 
 .logo img {
     max-width: 100px;
     height: auto;
-}
-
-/* Add padding to content below the navbar to prevent overlap */
-section {
-    padding: 20px;
-    max-width: 800px;
-    margin: 80px auto; /* Added margin-top to avoid navbar cover */
-    background-color: #ffffff;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 /* Navigation Links */
@@ -66,20 +59,42 @@ section {
     margin: 4px 0;
 }
 
-/* Footer Styles */
-.site-footer {
-    width: 100%;
-    background-color: #15616d;
-    color: #fff;
-    padding: 1.5rem 1rem; /* Reduced padding */
-    text-align: center;
-    visibility: hidden; /* Footer starts hidden */
-    transition: visibility 0.3s ease-in-out, padding 0.3s ease-in-out;
-    z-index: 1000;
+/* Responsive Design */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: #15616d;
+        position: absolute;
+        top: 100%;
+        left: 0;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .hamburger {
+        display: flex;
+    }
 }
 
-.site-footer.visible {
-    visibility: visible; /* Footer becomes visible when this class is added */
+a {
+    color: #001524;
+    text-decoration: none;
+}
+
+a:link, a:visited, a:hover, a:active {
+    color: #001524;
+}
+
+/* Footer Styles */
+.site-footer {
+    background-color: #15616d;
+    color: #fff;
+    padding: 2rem 1rem;
+    text-align: center;
 }
 
 .site-footer .container {
@@ -107,41 +122,40 @@ section {
     font-size: 1rem;
 }
 
-/* Footer Logo Styles */
-.site-footer .footer-logo {
-    max-width: 80px; /* Reduced size of the footer logo */
+.footer-logo {
+    max-width: 100px;
     margin-bottom: 1rem;
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
-    .nav-links {
-        display: none;
-        flex-direction: column;
-        width: 100%;
-        background-color: #15616d;
-        position: absolute;
-        top: 100%;
-        left: 0;
+    .site-footer p {
+        font-size: 0.875rem;
     }
+    .site-footer .social-links a {
+        margin: 0.25rem;
+    }
+}
 
-    .nav-links.active {
-        display: flex;
-    }
+section {
+    padding: 20px;
+    max-width: 800px;
+    margin: 20px auto;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
 
-    .hamburger {
-        display: flex;
-    }
+.block:nth-child(odd) {
+    text-align: left;
+    margin-left: 50px;
+    margin-right: auto;
+}
 
-    /* Adjust footer logo size for mobile */
-    .site-footer .footer-logo {
-        max-width: 60px;
-    }
-
-    /* Adjust padding for small screens */
-    section {
-        margin: 90px auto; /* Added more margin-top to account for mobile navbar height */
-    }
+.block:nth-child(even) {
+    text-align: right;
+    margin-left: auto;
+    margin-right: 50px;
 }
 
 h1, h2, h3 {
