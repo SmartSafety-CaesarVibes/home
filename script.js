@@ -19,6 +19,14 @@ document.addEventListener("DOMContentLoaded", function() {
         lastScrollTop = currentScroll <= 0 ? 0 : currentScroll; // For Mobile or negative scrolling
     });
 
+    // Hamburger menu functionality
+    const hamburger = document.getElementById("hamburger");
+    const navLinks = document.getElementById("nav-links");
+
+    hamburger.addEventListener("click", function() {
+        navLinks.classList.toggle("active"); // Toggle the 'active' class
+    });
+
     // Add hover effect to team boxes (if you have a class for team boxes)
     document.querySelectorAll(".team-info").forEach(box => {
         box.addEventListener("mouseenter", () => {
