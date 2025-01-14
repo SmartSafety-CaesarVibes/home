@@ -1,5 +1,6 @@
 body {
     background-color: #FFECD1;
+    margin: 0; /* Ensure no margin on body */
 }
 
 /* General Navbar Styles */
@@ -95,6 +96,7 @@ a:link, a:visited, a:hover, a:active {
     color: #fff;
     padding: 2rem 1rem;
     text-align: center;
+    margin: 0; /* Remove margin to eliminate border effect */
 }
 
 .site-footer .container {
@@ -144,6 +146,7 @@ section {
     background-color: #ffffff;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-top: 125px; /* Add margin to ensure the first section is not hidden by the navbar */
 }
 
 .block:nth-child(odd) {
