@@ -7,17 +7,11 @@ body {
 
 /* General Navbar Styles */
 .navbar {
-    width: 100%;
-    position: fixed;
-    top: 0;
-    left: 0;
-    background-color: #15616d;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    background-color: #15616d;
     padding: 0.5rem 1rem;
-    transition: top 0.3s ease-in-out;
-    z-index: 1000; /* Ensure the navbar is above the content */
 }
 
 .logo img {
