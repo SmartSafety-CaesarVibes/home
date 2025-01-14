@@ -14,25 +14,33 @@ body {
     top: 0;
     left: 0;
     right: 0;
-    transition: top 0.5s; /* Smooth transition */
     z-index: 1000; /* Ensure it stays on top */
 }
 
-.logo img {
-    max-width: 100px;
-    height: auto;
+/* Sidebar Styles */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: -250px; /* Start hidden off-screen */
+    width: 250px; /* Width of the sidebar */
+    height: 100%;
+    background-color: #15616d;
+    transition: left 0.3s ease; /* Smooth transition */    
+    z-index: 999; /* Ensure it stays below the navbar */
 }
 
-/* Navigation Links */
+.sidebar.active {
+    left: 0; /* Slide in when active */
+}
+
 .nav-links {
-    display: flex;
     list-style: none;
     margin: 0;
-    padding: 0;
+    padding: 20px; /* Add padding for better spacing */
 }
 
 .nav-links li {
-    margin: 0 1rem;
+    margin: 15px 0; /* Space between links */
 }
 
 .nav-links a {
@@ -48,7 +56,7 @@ body {
 
 /* Hamburger Menu (for mobile) */
 .hamburger {
-    display: none; /* Initially hidden, shown in media query */
+    display: flex; /* Show hamburger icon */
     flex-direction: column;
     cursor: pointer;
 }
@@ -61,33 +69,10 @@ body {
 }
 
 /* Responsive Design */
-@media (max-width: 768px) {
-    .nav-links {
-        display: none; /* Hide nav links by default */
-        flex-direction: column;
-        width: 100%;
-        background-color: #15616d;
-        position: absolute;
-        top: 100%;
-        left: 0;
+@media (min-width: 769px) {
+    .sidebar {
+        display: none; /* Hide sidebar on larger screens */
     }
-
-    .nav-links.active {
-        display: flex; /* Show nav links when active */
-    }
-
-    .hamburger {
-        display: flex; /* Show hamburger icon */
-    }
-}
-
-a {
-    color: #001524;
-    text-decoration: none;
-}
-
-a:link, a:visited, a:hover, a:active {
-    color: #001524;
 }
 
 /* Footer Styles */
@@ -146,7 +131,6 @@ section {
     background-color: #ffffff;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    margin-top: 125px; /* Add margin to ensure the first section is not hidden by the navbar */
 }
 
 .block:nth-child(odd) {
