@@ -4,8 +4,6 @@ document.addEventListener("DOMContentLoaded", function() {
     // Navbar scroll behavior
     let lastScrollTop = 0; // Keep track of the last scroll position
     const navbar = document.getElementById("navbar");
-    const hamburger = document.getElementById("hamburger");
-    const sidebar = document.getElementById("sidebar");
 
     window.addEventListener("scroll", function() {
         const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
@@ -22,7 +20,22 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 
     // Hamburger menu functionality
+    const hamburger = document.getElementById("hamburger");
+    const navLinks = document.getElementById("nav-links");
+
     hamburger.addEventListener("click", function() {
-        sidebar.classList.toggle("active"); // Toggle the 'active' class on the sidebar
+        navLinks.classList.toggle("active"); // Toggle the 'active' class
+    });
+
+    // Add hover effect to team boxes (if you have a class for team boxes)
+    document.querySelectorAll(".team-info").forEach(box => {
+        box.addEventListener("mouseenter", () => {
+            box.style.transform = "scale(1.05)";
+            box.style.transition = "0.3s";
+        });
+
+        box.addEventListener("mouseleave", () => {
+            box.style.transform = "scale(1)";
+        });
     });
 });
