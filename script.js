@@ -1,41 +1,48 @@
 document.addEventListener("DOMContentLoaded", function() {
-    console.log("About page loaded!");
+    console.log("SmartSafety page loaded!");
 
     // Navbar scroll behavior
-    let lastScrollTop = 0; // Keep track of the last scroll position
+    let lastScrollTop = 0;
     const navbar = document.getElementById("navbar");
 
     window.addEventListener("scroll", function() {
         const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
 
         if (currentScroll > lastScrollTop) {
-            // Scrolling down
-            navbar.style.top = "-125px"; // Hide the navbar (adjusted to -125px)
+            navbar.style.top = "-125px"; // Nasconde la navbar
         } else {
-            // Scrolling up
-            navbar.style.top = "0"; // Show the navbar
+            navbar.style.top = "0"; // Mostra la navbar
         }
 
-        lastScrollTop = currentScroll <= 0 ? 0 : currentScroll; // For Mobile or negative scrolling
+        lastScrollTop = currentScroll <= 0 ? 0 : currentScroll; // Per gestire lo scrolling negativo
     });
 
-    // Hamburger menu functionality
+    // Elementi del menu
     const hamburger = document.getElementById("hamburger");
     const navLinks = document.getElementById("nav-links");
+    const logo = document.querySelector(".logo");
 
     hamburger.addEventListener("click", function() {
-        navLinks.classList.toggle("active"); // Toggle the 'active' class
-    });
+        navLinks.classList.toggle("active");
+        hamburger.classList.toggle("open");
 
-    // Add hover effect to team boxes (if you have a class for team boxes)
-    document.querySelectorAll(".team-info").forEach(box => {
-        box.addEventListener("mouseenter", () => {
-            box.style.transform = "scale(1.05)";
-            box.style.transition = "0.3s";
-        });
-
-        box.addEventListener("mouseleave", () => {
-            box.style.transform = "scale(1)";
-        });
+        if (navLinks.classList.contains("active")) {
+            // Nasconde il logo e mostra le opzioni al suo posto
+            logo.style.opacity = "0";
+            logo.style.transition = "opacity 0.3s ease-in-out";
+            navLinks.style.display = "flex";
+            setTimeout(() => {
+                navLinks.style.opacity = "1";
+                navLinks.style.transform = "translateY(0)";
+            }, 100);
+        } else {
+            // Mostra il logo di nuovo e nasconde le opzioni
+            logo.style.opacity = "1";
+            navLinks.style.opacity = "0";
+            navLinks.style.transform = "translateY(-20px)";
+            setTimeout(() => {
+                navLinks.style.display = "none";
+            }, 300);
+        }
     });
 });
